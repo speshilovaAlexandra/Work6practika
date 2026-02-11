@@ -83,12 +83,14 @@
 	</body>
 	<script>
 		function SendMessage(sender) {
-			let Message = sender.parentElement.children[0].value;			
+			let Message = sender.parentElement.children[0].value;
+			let CSRF = sender.parentElement.children[1].value;			
 			let IdPost = sender.parentElement.id;
 			if(Message == "") return;
 
 			var Data = new FormData();
 			Data.append("Message", Message);
+			Data.append("CSRF", CSRF);
 			Data.append("IdPost", IdPost);
 			
 			$.ajax({
