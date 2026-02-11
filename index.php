@@ -60,6 +60,7 @@
 												echo 
 													'<div class="messages" id="'.$read_news["id"].'">
 														<input type="text">
+														<input type="text" value="'.$CSRF.'" style="display:none">
 														<div class="button" style="float: right; margin-top: 0px; margin-right: 0px;" onclick="SendMessage(this)">Отправить</div>
 													</div>';
 											}
