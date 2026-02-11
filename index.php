@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	include("./settings/connect_datebase.php");
+	$CSRF = password_hash("SECRET",PASSWORD_DEFAULT);
+	$_SESSION["CSRF"] = $CSRF;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -80,7 +82,7 @@
 	</body>
 	<script>
 		function SendMessage(sender) {
-			let Message = sender.parentElement.children[0].value;
+			let Message = sender.parentElement.children[0].value;			
 			let IdPost = sender.parentElement.id;
 			if(Message == "") return;
 
